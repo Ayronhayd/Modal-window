@@ -17,6 +17,11 @@ const initModalWindow = () => {
     );
 
     document.querySelector('.close-modal-window').addEventListener('click', closeModalWindow);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modalWindow.classList.contains('hidden')) {
+            closeModalWindow();
+        }
+    })
 
     overlay.addEventListener('click', closeModalWindow);
 };
